@@ -1,0 +1,46 @@
+---
+title: "TEST v2 for Rmarkdown"
+author: "UB1000"
+date: '2022.03.19 '
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(ggplot2,warn=FALSE)
+library(readr,warn=FALSE)
+library(tidyverse,warn=FALSE)
+```
+
+
+# Introduction
+
+This is a first challenge by "UB1000".
+He has a poor ability about solving problem and coding. Neverthless, he tries to do everything even if that is a his weakness 
+
+I want to use other contents, it is not basic data in Rstudio. So I would use my kaggle data.
+The data is composed of like this:
+
+```{r,include=FALSE}
+kaggle=read_csv("E:/안전방방/의범이/ADP실기/kaggle/housing.csv")
+kagglelittle=kaggle[c(1:100),]
+```
+
+```{r,echo=TRUE}
+head(kaggle)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+myplot = ggplot(data = kagglelittle, aes ( x = longitude, y = latitude)) +
+  geom_point(aes(longitude,latitude, colour = population, size = total_rooms)) +
+  labs(x = "X", y = "Y", colour = "proximity ocean")
+```
+
+```{r,echo=TRUE}
+myplot
+```
+
